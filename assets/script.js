@@ -30,7 +30,21 @@ $(document).ready(function () {
         // Change to prepend when ready
         $("#cityList").append(UserInput);
     });
-
+// displays weather info in jumbotron and pulls from the API
+function displayWeatherInfo(event, element) {
+    console.log(event, element)
+    var APIKey = "f7260b0580dc94670030951a250ac329";
+    var city = $(element).text();
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+       
+        
+    })
+}
 
 
 
