@@ -10,16 +10,21 @@
 </head>
 <body>
     <div class="container">
+        <!-- Dark header-->
         <header class="header fixed-top navbar-dark bg-dark">
+            <!-- Only h1  -->
             <h1 class=h1>Weather Dashboard</h1>
         </header>
+        <!-- Example looks like only one row -->
         <div class="row">
+            <!-- From the example this is the search and rendered search -->
             <div class="col-sm-3">
                 <form id="city-form">
                     <label for="city-input"> Search for a City: </label>
                     <input type="text" id="city-input"><br>
                     <input id="add-city" type="submit" value="Search">
                 </form>
+                <!--bootstrap list   -->
                 <div id="listGroupView">
                     <ul class="list-group" id="cityList">
                         <!-- <li class="list-group-item active"></li>Cras justo odio</li>
@@ -40,6 +45,7 @@
                         <p id = "windSpeed"></p>
                         <p id = "uvIndex"></p>
                       </div>
+                      <!-- put cards here -->
                 <div class="fiveDayWeather">
                 </div>
             </div>
@@ -54,6 +60,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
