@@ -10,8 +10,8 @@ $(document).ready(function () {
         // pushes city into city array
         arrayOfCityNames.push(city);
         // hopefully storing in local on the 
-        localStorage.setItem(cityNames, cityNames);
-        localStorage.getItem(cityNames);
+        // localStorage.setItem(cityNames, cityNames);
+        // localStorage.getItem(cityNames);
         // renderListItems();
         // for (var i = 0; i < cityName.length; i++) {
         var userInput = $("<li>", {
@@ -25,10 +25,10 @@ $(document).ready(function () {
         })
         // 
         userInput.addClass("newCity");
-        UserInput.attr("data-name", city);
-        UserInput.text(city)
+        userInput.attr("data-name", city);
+        userInput.text(city)
         // Change to prepend when ready
-        $("#cityList").append(UserInput);
+        $("#cityList").append(userInput);
     });
 // displays weather info in jumbotron and pulls from the API
 function displayWeatherInfo(event, element) {
@@ -41,7 +41,20 @@ function displayWeatherInfo(event, element) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-       
+        //Displays the city name in Jumbotron
+        $(".currentCityName").append(response.name);
+        //Displays the Icond
+        var cityIconCode = response.weather[0].icon;
+        var cityIconUrl = "http://openweathermap.org/img/w/" + cityIconCode + ".png";
+        $("#cityIconUrl").attr("src", cityIconUrl);
+        // Displays the Temp
+        $("#cityTemp").append("Temperature: " + response.main.temp);
+        // Displays the Speed
+        $("#cityWindSpeed").append("Wind Speed: " + response.wind.speed + " mph");
+        // Displays the Humidity
+        $("#cityHumidity").append("Humidity: " +response.main.humidity);
+        console.log("Longitude" + response.coord.lon);
+        console.log("Latitude" +response.coord.lat);
         
     })
 }
