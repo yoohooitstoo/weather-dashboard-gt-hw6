@@ -53,8 +53,11 @@ function displayWeatherInfo(event, element) {
         $("#cityWindSpeed").append("Wind Speed: " + response.wind.speed + " mph");
         // Displays the Humidity
         $("#cityHumidity").append("Humidity: " +response.main.humidity);
-        console.log("Longitude" + response.coord.lon);
-        console.log("Latitude" +response.coord.lat);
+
+
+        // var cityLon = response.coord.lon;
+
+        // var cityLat = response.coord.lat;
         
     })
 }
