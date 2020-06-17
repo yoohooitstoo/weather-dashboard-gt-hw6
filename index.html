@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="assets/style.css" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
@@ -20,11 +21,29 @@
         <!-- Example looks like only one row -->
         <div class="row" class="emptyDiv">
             <!-- From the example this is the search and rendered search -->
-            <div class="col-sm-2">
+            <div class="col-sm-2 bg-light">
                 <form id="city-form">
                     <label for="cityInput"> Search for a City: </label>
-                    <input type="text" id="cityInput"><br>
-                    <input id="newCity" type="submit" value="Search">
+                    <input type="text" class="my-2 w-75" id="cityInput">
+                    <button id="newCity" class="btn btn-primary">
+                        <svg
+                          class="bi bi-search"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
+                          />
+                        </svg>
+                      </button>
                 </form>
                 <!--bootstrap list   -->
                 <div id="listGroupView">
@@ -37,7 +56,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- in his example, this is where the function shows up -->
+            <!-- Where we will put our display weather -->
             <div class="currentCity col-sm-10">
                 <div class="jumbotron">
                     <div id="emptyDiv">
@@ -49,7 +68,7 @@
                         <p id="cityUvIndex"></p>
                     </div>
                 </div>
-           
+
                 <div class="fiveDayWeather">
                     <div class="row justify-md-center">
                         <div class="fiveDayWeather col-sm-2 mx-2">
