@@ -53,11 +53,11 @@ $(document).ready(function () {
             var cityIconUrl = "http://openweathermap.org/img/w/" + cityIconCode + ".png";
             $("#cityIconUrl").attr("src", cityIconUrl);
             // Displays the Temp
-            $("#cityTemp").append("Temperature: " + response.main.temp);
+            $("#cityTemp").append("Temperature: " + response.main.temp + " °F");
             // Displays the Speed
             $("#cityWindSpeed").append("Wind Speed: " + response.wind.speed + " mph");
             // Displays the Humidity
-            $("#cityHumidity").append("Humidity: " + response.main.humidity);
+            $("#cityHumidity").append("Humidity: " + response.main.humidity + " %");
             //displays uv index after making 2nd api call
             var cityLon = response.coord.lon
             var cityLat = response.coord.lat
