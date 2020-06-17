@@ -107,7 +107,19 @@ $(document).ready(function () {
                 var cityIconTwoUrl = "http://openweathermap.org/img/w/" + cityIconTwo + ".png";
                 $("#cityDayTwoIcon").attr("src", cityIconTwoUrl);   
 
+                $("#cityDayThreeDate").append("Date: " + response3.list[16].dt_txt);
+                $("#cityDayThreeTemp").append("Temp: " + response3.list[16].main.temp + "°F");
+                $("#cityDayThreeHumd").append("Humidity: " + response3.list[16].main.humidity+ "%");
+                var cityIconThree = response3.list[16].weather[0].icon;
+                var cityIconThreeUrl = "http://openweathermap.org/img/w/" + cityIconThree + ".png";
+                $("#cityDayThreeIcon").attr("src", cityIconThreeUrl);   
 
+                $("#cityDayFourDate").append("Date: " + response3.list[24].dt_txt);
+                $("#cityDayFourTemp").append("Temp: " + response3.list[24].main.temp + "°F");
+                $("#cityDayFourHumd").append("Humidity: " + response3.list[24].main.humidity+ "%");
+                var cityIconFour = response3.list[24].weather[0].icon;
+                var cityIconFourUrl = "http://openweathermap.org/img/w/" + cityIconFour + ".png";
+                $("#cityDayFourIcon").attr("src", cityIconFourUrl);   
                 
             });
         })
