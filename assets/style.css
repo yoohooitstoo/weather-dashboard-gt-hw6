@@ -16,3 +16,15 @@ h1 {
 .currentCity {
     margin-top: 100px
 }
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+background-color: green;
+}
+
+.red {
+background-color: red;
+}
