@@ -73,7 +73,7 @@ $(document).ready(function () {
 
                 $("#cityUvIndex").append("UV Index: ").append($("#cityUvIndexNumbers").append(response2.value));
 
-                var cityUvIndex = response2.value;
+                var cityUvIndex = parseInt(parseFloat(response2.value));
 
                 if (cityUvIndex < 3) {
                     $("#cityUvIndexNumbers").addClass("green");
@@ -93,10 +93,14 @@ $(document).ready(function () {
             }).then(function (response3) {
                 console.log(response3);
                 // console.log(response3.list[0].dt_txt);
+                $("#cityDayOneDate").append("Date: " + response3.list[0].dt_txt);
+                $("#cityDayOneTemp").append("Temp: " + response3.list[0].main.temp + "°F");
+                $("#cityDayOneHumd").append("Humidity: " + response3.list[0].main.humidity+ "%");
+                var cityIconOne = response3.list[0].weather[0].icon;
+                var cityIconOneUrl = "http://openweathermap.org/img/w/" + cityIconOne + ".png";
+                $("#cityDayOneIcon").attr("src", cityIconOneUrl);    
+
                 
-
-
-
             });
         })
     }
