@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 
                 //when you console.log it shows when it's clicked, which city is being clicked
-                console.log($(this));
+                // console.log($(this));
                 //this passes this element in this argument
                 displayWeatherInfo(event, this);
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
     });
     // displays weather info in jumbotron and pulls from the API
     function displayWeatherInfo(event, element) {
-        console.log(event, element)
+        // console.log(event, element);
         var APIKey = "f7260b0580dc94670030951a250ac329";
         var city = $(element).text();
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
@@ -58,6 +58,7 @@ $(document).ready(function () {
             $("#cityWindSpeed").append("Wind Speed: " + response.wind.speed + " mph");
             // Displays the Humidity
             $("#cityHumidity").append("Humidity: " + response.main.humidity + " %");
+
             //displays uv index after making 2nd api call
             var cityLon = response.coord.lon
             var cityLat = response.coord.lat
@@ -68,38 +69,34 @@ $(document).ready(function () {
             }).then(function (response2) {
                 // console.log(response2);
 
-                $("#cityUvIndex").append("UV Index: " + response2.value);
+                
 
-                var cityUvIndex = parseFloat(parseInt(response2.value));
+                $("#cityUvIndex").append("UV Index: ").append($("#cityUvIndexNumbers").append(response2.value));
+
+                var cityUvIndex = response2.value;
 
                 if (cityUvIndex < 3) {
-                    $("#cityUvIndex").addClass("green");
+                    $("#cityUvIndexNumbers").addClass("green");
                 } else if (cityUvIndex < 7) {
-                    $("#cityUvIndex").addClass("orange");
+                    $("#cityUvIndexNumbers").addClass("orange");
                 } else {
-                    $("#cityUvIndex").addClass("red");
+                    $("#cityUvIndexNumbers").addClass("red");
                 };
-                // if uvIndex > 3;
-                // make it green (favorable)
-                // even if uvIndex < 7
-                // make it red  (severe)
-                // else between 3-7 make it yellow (moderate)
-            });
+                
 
+            });
+            // 3rd api call to display multiple weather forecasts
             var queryURL3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
             $.ajax({
                 url: queryURL3,
                 method: "GET"
             }).then(function (response3) {
                 console.log(response3);
-                console.log(response3.list[0].dt_txt);
-                // console.log(response3.list[0].main.temp);
-                // console.log(response3.list[0].main.humidity);
-                // console.log(response3.list[0].weather[0].icon);
+                // console.log(response3.list[0].dt_txt);
+                
 
-                // var cityLon = response.coord.lon;
 
-                // var cityLat = response.coord.lat;
+
             });
         })
     }
