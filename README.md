@@ -23,7 +23,7 @@ This dashboard is meant for those who want to see what the weather looks like in
 
 The following screenshot demonstrates the weather dashboard functionality:
 
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
+![weather dashboard demo](./assets/06-server-side-apis-homework-demo.png)
 
 ## Credits
 
