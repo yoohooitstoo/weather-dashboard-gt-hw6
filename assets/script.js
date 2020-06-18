@@ -75,7 +75,7 @@ $(document).ready(function () {
         // My own generated Api key 
         var APIKey = "f7260b0580dc94670030951a250ac329";
         var city = $(element).text();
-        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
         $.ajax({
             url: queryURL,
             method: "GET"
