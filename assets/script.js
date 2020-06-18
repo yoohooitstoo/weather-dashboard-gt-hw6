@@ -75,7 +75,7 @@ $(document).ready(function () {
         // My own generated Api key 
         var APIKey = "f7260b0580dc94670030951a250ac329";
         var city = $(element).text();
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -85,7 +85,7 @@ $(document).ready(function () {
             $(".currentCityName").append(response.name);
             //Displays the Icon
             var cityIconCode = response.weather[0].icon;
-            var cityIconUrl = "http://openweathermap.org/img/w/" + cityIconCode + ".png";
+            var cityIconUrl = "https://openweathermap.org/img/w/" + cityIconCode + ".png";
             $("#cityIconUrl").attr("src", cityIconUrl);
             // Displays the Temp
             $("#cityTemp").append("Temperature: " + response.main.temp + " °F");
@@ -97,7 +97,7 @@ $(document).ready(function () {
             //displays uv index, which is not a response from the first, after making 2nd api call
             var cityLon = response.coord.lon
             var cityLat = response.coord.lat
-            var queryURL2 = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLon;
+            var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + cityLat + "&lon=" + cityLon;
             $.ajax({
                 url: queryURL2,
                 method: "GET"
@@ -117,7 +117,7 @@ $(document).ready(function () {
                 };
             });
             // 3rd api call to display multiple weather forecasts
-            var queryURL3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
+            var queryURL3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
             $.ajax({
                 url: queryURL3,
                 method: "GET"
@@ -129,7 +129,7 @@ $(document).ready(function () {
                 $("#cityDayTemp1").append("Temp: " + response3.list[0].main.temp + "°F");
                 $("#cityDayHumd1").append("Humidity: " + response3.list[0].main.humidity + "%");
                 var cityIconOne = response3.list[0].weather[0].icon;
-                var cityIconOneUrl = "http://openweathermap.org/img/w/" + cityIconOne + ".png";
+                var cityIconOneUrl = "https://openweathermap.org/img/w/" + cityIconOne + ".png";
                 $("#cityDayIcon1").attr("src", cityIconOneUrl);
 
                 //Card two
@@ -137,7 +137,7 @@ $(document).ready(function () {
                 $("#cityDayTemp2").append("Temp: " + response3.list[8].main.temp + "°F");
                 $("#cityDayHumd2").append("Humidity: " + response3.list[8].main.humidity + "%");
                 var cityIconTwo = response3.list[8].weather[0].icon;
-                var cityIconTwoUrl = "http://openweathermap.org/img/w/" + cityIconTwo + ".png";
+                var cityIconTwoUrl = "https://openweathermap.org/img/w/" + cityIconTwo + ".png";
                 $("#cityDayIcon2").attr("src", cityIconTwoUrl);
 
                 //Card three
@@ -145,7 +145,7 @@ $(document).ready(function () {
                 $("#cityDayTemp3").append("Temp: " + response3.list[16].main.temp + "°F");
                 $("#cityDayHumd3").append("Humidity: " + response3.list[16].main.humidity + "%");
                 var cityIconThree = response3.list[16].weather[0].icon;
-                var cityIconThreeUrl = "http://openweathermap.org/img/w/" + cityIconThree + ".png";
+                var cityIconThreeUrl = "https://openweathermap.org/img/w/" + cityIconThree + ".png";
                 $("#cityDayIcon3").attr("src", cityIconThreeUrl);
 
                 //Card four
@@ -153,7 +153,7 @@ $(document).ready(function () {
                 $("#cityDayTemp4").append("Temp: " + response3.list[24].main.temp + "°F");
                 $("#cityDayHumd4").append("Humidity: " + response3.list[24].main.humidity + "%");
                 var cityIconFour = response3.list[24].weather[0].icon;
-                var cityIconFourUrl = "http://openweathermap.org/img/w/" + cityIconFour + ".png";
+                var cityIconFourUrl = "https://openweathermap.org/img/w/" + cityIconFour + ".png";
                 $("#cityDayIcon4").attr("src", cityIconFourUrl);
 
                 //Card five
@@ -161,7 +161,7 @@ $(document).ready(function () {
                 $("#cityDayTemp5").append("Temp: " + response3.list[32].main.temp + "°F");
                 $("#cityDayHumd5").append("Humidity: " + response3.list[32].main.humidity + "%");
                 var cityIconFive = response3.list[32].weather[0].icon;
-                var cityIconFiveUrl = "http://openweathermap.org/img/w/" + cityIconFive + ".png";
+                var cityIconFiveUrl = "https://openweathermap.org/img/w/" + cityIconFive + ".png";
                 $("#cityDayIcon5").attr("src", cityIconFiveUrl);
             });
         })
