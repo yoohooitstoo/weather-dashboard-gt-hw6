@@ -3,6 +3,7 @@ $(document).ready(function () {
     var arrayOfCityNames = [];
     // button function for search
     $("#newCity").on("click", function (event) {
+        $(".emptyDiv").empty();
         event.preventDefault();
 
         // City object
@@ -37,6 +38,7 @@ $(document).ready(function () {
     });
     // displays weather info in jumbotron and pulls from the API
     function displayWeatherInfo(event, element) {
+       
         // console.log(event, element);
         var APIKey = "f7260b0580dc94670030951a250ac329";
         var city = $(element).text();
@@ -93,35 +95,35 @@ $(document).ready(function () {
             }).then(function (response3) {
                 console.log(response3);
                 // console.log(response3.list[0].dt_txt);
-                $("#cityDayOneDate").append("Date: " + response3.list[0].dt_txt);
+                $("#cityDayOneDate").append(response3.list[0].dt_txt.split(" ")[0]);
                 $("#cityDayOneTemp").append("Temp: " + response3.list[0].main.temp + "°F");
                 $("#cityDayOneHumd").append("Humidity: " + response3.list[0].main.humidity+ "%");
                 var cityIconOne = response3.list[0].weather[0].icon;
                 var cityIconOneUrl = "http://openweathermap.org/img/w/" + cityIconOne + ".png";
                 $("#cityDayOneIcon").attr("src", cityIconOneUrl);
 
-                $("#cityDayTwoDate").append("Date: " + response3.list[8].dt_txt);
+                $("#cityDayTwoDate").append(response3.list[8].dt_txt.split(" ")[0]);
                 $("#cityDayTwoTemp").append("Temp: " + response3.list[8].main.temp + "°F");
                 $("#cityDayTwoHumd").append("Humidity: " + response3.list[8].main.humidity+ "%");
                 var cityIconTwo = response3.list[8].weather[0].icon;
                 var cityIconTwoUrl = "http://openweathermap.org/img/w/" + cityIconTwo + ".png";
                 $("#cityDayTwoIcon").attr("src", cityIconTwoUrl);   
 
-                $("#cityDayThreeDate").append("Date: " + response3.list[16].dt_txt);
+                $("#cityDayThreeDate").append(response3.list[16].dt_txt.split(" ")[0]);
                 $("#cityDayThreeTemp").append("Temp: " + response3.list[16].main.temp + "°F");
                 $("#cityDayThreeHumd").append("Humidity: " + response3.list[16].main.humidity+ "%");
                 var cityIconThree = response3.list[16].weather[0].icon;
                 var cityIconThreeUrl = "http://openweathermap.org/img/w/" + cityIconThree + ".png";
                 $("#cityDayThreeIcon").attr("src", cityIconThreeUrl);   
 
-                $("#cityDayFourDate").append("Date: " + response3.list[24].dt_txt);
+                $("#cityDayFourDate").append(response3.list[24].dt_txt.split(" ")[0]);
                 $("#cityDayFourTemp").append("Temp: " + response3.list[24].main.temp + "°F");
                 $("#cityDayFourHumd").append("Humidity: " + response3.list[24].main.humidity+ "%");
                 var cityIconFour = response3.list[24].weather[0].icon;
                 var cityIconFourUrl = "http://openweathermap.org/img/w/" + cityIconFour + ".png";
                 $("#cityDayFourIcon").attr("src", cityIconFourUrl);
                 
-                $("#cityDayFiveDate").append("Date: " + response3.list[32].dt_txt);
+                $("#cityDayFiveDate").append(response3.list[32].dt_txt.split(" ")[0]);
                 $("#cityDayFiveTemp").append("Temp: " + response3.list[32].main.temp + "°F");
                 $("#cityDayFiveHumd").append("Humidity: " + response3.list[32].main.humidity+ "%");
                 var cityIconFive = response3.list[32].weather[0].icon;

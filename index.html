@@ -19,7 +19,7 @@
             <h1 class=h1>Weather Dashboard</h1>
         </header>
         <!-- Example looks like only one row -->
-        <div class="row" class="emptyDiv">
+        <div class="row">
             <!-- From the example this is the search and rendered search -->
             <div class="col-sm-3 bg-light">
                 <form id="city-form">
@@ -50,7 +50,7 @@
             <div class="currentCity col-sm-9">
                 <div class="jumbotron">
                     <div id="emptyDiv">
-                        <h2 class="display-4 currentCityName"><img id="cityIconUrl" alt=""></h2>
+                        <h2 class="display-4 currentCityName" class="emptyDiv"><img id="cityIconUrl" alt=""></h2>
                         <hr class="my-4">
                         <p id="cityTemp"></p>
                         <p id="cityHumidity"></p>
@@ -62,10 +62,9 @@
                 <div class="fiveDayWeather"><h2>5-Day Forecast:</h2>
                     <div class="row">
                         <div class="fiveDayWeather col-sm-2 mr-2">
-                            <div class="card" style="width: 10rem;height: 15rem;">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text" id="cityDayOneDate"></p>
+                                    <h5 class="card-text" id="cityDayOneDate"></h5>
                                     <p class="card-text" ><img id="cityDayOneIcon" alt=""></p>
                                     <p class="card-text" id="cityDayOneTemp"></p>
                                     <p class="card-text" id="cityDayOneHumd"></p>
@@ -73,10 +72,9 @@
                             </div>
                         </div>
                         <div class="fiveDayWeather col-sm-2 mx-3">
-                            <div class="card" style="width: 10rem;height: 15rem;">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text" id="cityDayTwoDate"></p>
+                                    <h5 class="card-text" id="cityDayTwoDate"></h5>
                                     <p class="card-text"><img id="cityDayTwoIcon" alt=""></p>
                                     <p class="card-text" id="cityDayTwoTemp"></p>
                                     <p class="card-text" id="cityDayTwoHumd"></p>
@@ -84,10 +82,9 @@
                             </div>
                         </div>
                         <div class="fiveDayWeather col-sm-2 mx-2">
-                            <div class="card" style="width: 10rem;height: 15rem;">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text" id="cityDayThreeDate"></p>
+                                    <h5 class="card-text" id="cityDayThreeDate"></h5>
                                     <p class="card-text" ><img id="cityDayThreeIcon" alt=""></p>
                                     <p class="card-text" id="cityDayThreeTemp"></p>
                                     <p class="card-text" id="cityDayThreeHumd"></p>
@@ -95,10 +92,9 @@
                             </div>
                         </div>
                         <div class="fiveDayWeather col-sm-2 mx-3">
-                            <div class="card" style="width: 10rem;height: 15rem;">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text" id="cityDayFourDate"></p>
+                                    <h5 class="card-text" id="cityDayFourDate"></h5>
                                     <p class="card-text"><img id="cityDayFourIcon" alt=""></p>
                                     <p class="card-text" id="cityDayFourTemp"></p>
                                     <p class="card-text" id="cityDayFourHumd"></p>
@@ -106,10 +102,9 @@
                             </div>
                         </div>
                         <div class="fiveDayWeather col-sm-2 ml-2">
-                            <div class="card" style="width: 10rem; height: 15rem;">
+                            <div class="card bg-primary text-white" style="width: 10rem; height: 12rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text" id="cityDayFiveDate"></p>
+                                    <h5 class="card-text" id="cityDayFiveDate"></h5>
                                     <p class="card-text"><img id="cityDayFiveIcon" alt=""></p>
                                     <p class="card-text" id="cityDayFiveTemp"></p>
                                     <p class="card-text" id="cityDayFiveHumd"></p>
