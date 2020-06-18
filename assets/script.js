@@ -69,7 +69,7 @@ $(document).ready(function () {
     });
     // displays weather info in jumbotron and pulls from the API
     function displayWeatherInfo(event, element) {
-       
+       clearCityJumbotron();
         // console.log(event, element);
         // My own generated Api key 
         var APIKey = "f7260b0580dc94670030951a250ac329";
@@ -174,7 +174,7 @@ $(document).ready(function () {
                 
             });
         })
-        //Using .empty r detach was not working so here is a work around
+        //Using .empty or detach was not working so here is a work around
         function clearCityJumbotron() {
             // need to create variables for the img and span since they are embedded
             var img = "<img id='cityIconUrl'>";
@@ -185,8 +185,8 @@ $(document).ready(function () {
             $("#cityTemp").text("");
             $("#cityHumidity").text("");
             $("#cityWindSpeed").text("");
-            $("#cityUvIndex").text("");
-            $("#cityUvIndexNumbers").text("").html(span);
+            $("#cityUvIndexNumbers").text("");
+            $("#cityUvIndex").text("").html(span);
           }
          
 
