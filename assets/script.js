@@ -32,7 +32,7 @@ $(document).ready(function () {
         event.preventDefault();
         // sets the city and removes any dead spaces
         var city = $("#cityInput").val().trim();
-        // console.log(city);
+        
         //localStorage is empty so is NewcityNames
         if (!localStorage.searchedCityNames) {
             let arrayOfCityNames = []
@@ -71,7 +71,7 @@ $(document).ready(function () {
     function displayWeatherInfo(event, element) {
         clearCityJumbotron();
         clearCityCards(1,2,3,4,5);
-        // console.log(event, element);
+       
         // My own generated Api key 
         var APIKey = "f7260b0580dc94670030951a250ac329";
         var city = $(element).text();
@@ -80,7 +80,7 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            // console.log(response);
+           
             //Displays the city name in Jumbotron
             $(".currentCityName").append(response.name);
             //Displays the Icon
@@ -102,8 +102,6 @@ $(document).ready(function () {
                 url: queryURL2,
                 method: "GET"
             }).then(function (response2) {
-                // console.log(response2);
-
 
                 // gives us the uv index numbers to the only item with a color background
                 $("#cityUvIndex").append("UV Index: ").append($("#cityUvIndexNumbers").append(response2.value));
@@ -117,8 +115,6 @@ $(document).ready(function () {
                 } else {
                     $("#cityUvIndexNumbers").addClass("red");
                 };
-
-
             });
             // 3rd api call to display multiple weather forecasts
             var queryURL3 = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
@@ -127,9 +123,7 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response3) {
                 console.log(response3);
-                // console.log(response3.list[0].dt_txt);
-                // Figure out where to find the date and card info
-
+                
                 //Card one 
                 $("#cityDayDate1").append(response3.list[0].dt_txt.split(" ")[0]);
                 $("#cityDayTemp1").append("Temp: " + response3.list[0].main.temp + "°F");
@@ -138,7 +132,6 @@ $(document).ready(function () {
                 var cityIconOneUrl = "http://openweathermap.org/img/w/" + cityIconOne + ".png";
                 $("#cityDayIcon1").attr("src", cityIconOneUrl);
 
-
                 //Card two
                 $("#cityDayDate2").append(response3.list[8].dt_txt.split(" ")[0]);
                 $("#cityDayTemp2").append("Temp: " + response3.list[8].main.temp + "°F");
@@ -146,7 +139,6 @@ $(document).ready(function () {
                 var cityIconTwo = response3.list[8].weather[0].icon;
                 var cityIconTwoUrl = "http://openweathermap.org/img/w/" + cityIconTwo + ".png";
                 $("#cityDayIcon2").attr("src", cityIconTwoUrl);
-
 
                 //Card three
                 $("#cityDayDate3").append(response3.list[16].dt_txt.split(" ")[0]);
@@ -171,8 +163,6 @@ $(document).ready(function () {
                 var cityIconFive = response3.list[32].weather[0].icon;
                 var cityIconFiveUrl = "http://openweathermap.org/img/w/" + cityIconFive + ".png";
                 $("#cityDayIcon5").attr("src", cityIconFiveUrl);
-
-
             });
         })
         //Using .empty or detach was not working so here is a work around
