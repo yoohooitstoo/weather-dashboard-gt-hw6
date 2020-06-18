@@ -29,7 +29,6 @@ $(document).ready(function () {
    
     // button function for search
     $("#newCity").on("click", function (event) {
-        $(".emptyDiv").detach();
         event.preventDefault();
         // sets the city and removes any dead spaces
         var city = $("#cityInput").val().trim();
@@ -175,8 +174,21 @@ $(document).ready(function () {
                 
             });
         })
-
-        
+        //Using .empty r detach was not working so here is a work around
+        function clearCityJumbotron() {
+            // need to create variables for the img and span since they are embedded
+            var img = "<img id='cityIconUrl'>";
+            var span = "<span id='cityUvIndexNumbers' class='badge badge-secondary'></span>"
+            //telling the function what to clear
+            $(".currentCityName").text("").html(img);
+            $("#cityIconUrl").attr("src", "");
+            $("#cityTemp").text("");
+            $("#cityHumidity").text("");
+            $("#cityWindSpeed").text("");
+            $("#cityUvIndex").text("");
+            $("#cityUvIndexNumbers").text("").html(span);
+          }
+         
 
     }
 
