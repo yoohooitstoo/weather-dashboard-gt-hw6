@@ -1,0 +1,30 @@
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border: 1px solid lightblue;
+}
+/* This stops the form entering the header */
+#city-form {
+    margin-top: 100px
+}
+
+.currentCity {
+    margin-top: 100px
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+background-color: green;
+}
+
+.red {
+background-color: red;
+}

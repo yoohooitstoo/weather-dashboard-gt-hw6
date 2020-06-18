@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Dark header-->
+        <header class="header fixed-top navbar-dark bg-dark">
+            <!-- Only h1  -->
+            <h1 class=h1>Weather Dashboard</h1>
+        </header>
+        <!-- Example looks like only one row -->
+        <div class="row">
+            <!-- From the example this is the search and rendered search -->
+            <div class="col-sm-3 bg-light">
+                <form id="city-form">
+                    <label for="cityInput"><h4>Search for a City:</h4></label>
+                    <input type="text" class="my-2 w-75" id="cityInput">
+                    <button id="newCity" class="btn btn-primary">
+                        <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </button>
+                </form>
+                <!--bootstrap list   -->
+                <div id="listGroupView">
+                    <ul class="list-group" id="cityList">
+                        <!-- <li class="list-group-item active"></li>Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li> -->
+                    </ul>
+                </div>
+            </div>
+            <!-- Where we will put our display weather -->
+            <div class="currentCity col-sm-9">
+                <div class="jumbotron">
+                    <div>
+                        <h2 class="display-4 currentCityName" ><img id="cityIconUrl" alt=""></h2>
+                        <hr class="my-4">
+                        <p id="cityTemp"></p>
+                        <p id="cityHumidity"></p>
+                        <p id="cityWindSpeed"></p>
+                        <p id="cityUvIndex"></p><span class="badge badge-secondary" id="cityUvIndexNumbers"></span>
+                    </div>
+                </div>
+
+                <div class="fiveDayWeather"><h2>5-Day Forecast:</h2>
+                    <div class="row">
+                        <div class="fiveDayWeather col-sm-2 mr-2">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
+                                <div class="card-body">
+                                    <h5 class="card-text" id="cityDayDate1"></h5>
+                                    <p class="card-text" ><img id="cityDayIcon1" alt=""></p>
+                                    <p class="card-text" id="cityDayTemp1"></p>
+                                    <p class="card-text" id="cityDayHumd1"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fiveDayWeather col-sm-2 mx-3">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
+                                <div class="card-body">
+                                    <h5 class="card-text" id="cityDayDate2"></h5>
+                                    <p class="card-text"><img id="cityDayIcon2" alt=""></p>
+                                    <p class="card-text" id="cityDayTemp2"></p>
+                                    <p class="card-text" id="cityDayHumd2"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fiveDayWeather col-sm-2 mx-2">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
+                                <div class="card-body">
+                                    <h5 class="card-text" id="cityDayDate3"></h5>
+                                    <p class="card-text" ><img id="cityDayIcon3" alt=""></p>
+                                    <p class="card-text" id="cityDayTemp3"></p>
+                                    <p class="card-text" id="cityDayHumd3"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fiveDayWeather col-sm-2 mx-3">
+                            <div class="card bg-primary text-white" style="width: 10rem;height: 12rem;">
+                                <div class="card-body">
+                                    <h5 class="card-text" id="cityDayDate4"></h5>
+                                    <p class="card-text"><img id="cityDayIcon4" alt=""></p>
+                                    <p class="card-text" id="cityDayTemp4"></p>
+                                    <p class="card-text" id="cityDayHumd4"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fiveDayWeather col-sm-2 ml-2">
+                            <div class="card bg-primary text-white" style="width: 10rem; height: 12rem;">
+                                <div class="card-body">
+                                    <h5 class="card-text" id="cityDayDate5"></h5>
+                                    <p class="card-text"><img id="cityDayIcon5" alt=""></p>
+                                    <p class="card-text" id="cityDayTemp5"></p>
+                                    <p class="card-text" id="cityDayHumd5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- put cards here -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
